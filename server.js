@@ -7,7 +7,8 @@ var express = require('express')
 ,	mongooseURI = secret.mongooseURI
 ,	passport = require('passport')
 ,	session = require('express-session')
-,	needle = require('needle')	
+,	needle = require('needle')
+,   BlogPostCtrl = require('./controllers/BlogPostCtrl.js')	
 ,	app = express();
 
 app.use(bodyParser.json());
@@ -16,8 +17,9 @@ app.use(passport.initialize());
 app.use(passport.session());
 app.use(express.static(__dirname + '/public'));
 
-
-
+//BLOG POST
+app.post('/srvr/post', BlogPostCtrl.newBlogPost);
+app.get('/srvr/post', BlogPostCtrl.getBlogPosts);
 
 
 

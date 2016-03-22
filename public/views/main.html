@@ -13,6 +13,14 @@
     <div class="nav-menu">
 
     </div>
-
+    <button ng-click="toggleForm()"></button>
+    <div class="postCreation" ng-show="showForm">
+        <div class="form">
+            <input ng-model="post.title" type="text">
+            <input ng-model="post.summary" type="text">
+            <input ng-model="post.body" type="text">
+            <input ng-model="post.imageUrl" type="text">
+        </div>
+    </div>
 
 </div>
