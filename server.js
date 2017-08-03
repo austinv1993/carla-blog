@@ -19,7 +19,7 @@ app.use(express.static(__dirname + '/public'));
 
 //BLOG POST
 app.post('/srvr/post', BlogPostCtrl.newBlogPost);
-app.get('/srvr/post', BlogPostCtrl.getBlogPosts);
+app.get('/srvr/get', BlogPostCtrl.getBlogPosts);
 
 
 
@@ -29,7 +29,7 @@ app.get('/srvr/post', BlogPostCtrl.getBlogPosts);
 app.listen(port, function() {
 	console.log("Listening on port:", port);
 });
-mongoose.connect(mongooseURI);
-mongoose.connection.once('open', function() {
+mongoose.createConnection(mongooseURI);
+mongoose.connection.once('openUri', function() {
 	console.log("Connected to MongoDB at:", mongooseURI);
 });
