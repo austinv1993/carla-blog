@@ -22,14 +22,13 @@ app.post('/srvr/post', BlogPostCtrl.newBlogPost);
 app.get('/srvr/get', BlogPostCtrl.getBlogPosts);
 
 
-
-
-
-
 app.listen(port, function() {
 	console.log("Listening on port:", port);
 });
-mongoose.createConnection(mongooseURI);
-mongoose.connection.once('openUri', function() {
-	console.log("Connected to MongoDB at:", mongooseURI);
-});
+mongoose.connect(mongooseURI);
+
+var conn = mongoose.connection;
+
+conn.once('open', function(){
+	console.log("Connected to MLab");
+})
