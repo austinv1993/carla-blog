@@ -32,5 +32,5 @@ mongoose.connect(mongooseURI);
 var conn = mongoose.connection;
 
 conn.once('open', function(){
-	console.log("Connected to MLab");
+	console.log("Connected to MLab at " + mongooseURI);
 })
