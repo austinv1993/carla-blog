@@ -9,6 +9,7 @@ var express = require('express')
 ,	session = require('express-session')
 ,	needle = require('needle')
 ,   PostControl = require('./controllers/PostControl.js')
+,   AdminControl = require('./controllers/AdminControl.js')
 ,	Post = require('./models/Post.js')
 ,	app = express();
 
@@ -19,8 +20,11 @@ app.use(passport.session());
 app.use(express.static(__dirname + '/public'));
 
 //POSTS
-app.post('/api/post', PostControl.newPost);
-app.get('/api/get', PostControl.getPosts);
+app.post('/api/create-post', PostControl.newPost);
+app.get('/api/get-posts', PostControl.getPosts);
+
+//ADMIN
+app.post('/api/create-admin', AdminControl.createAdmin);
 
 
 
