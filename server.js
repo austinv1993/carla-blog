@@ -1,5 +1,6 @@
 var express = require('express')
 ,	cors = require('cors')
+,   bcrypt = require('bcrypt')
 ,	mongoose = require('mongoose')
 ,	bodyParser = require('body-parser')
 ,	port = 3000
@@ -26,15 +27,11 @@ app.get('/api/get-posts', PostControl.getPosts);
 //ADMIN
 app.post('/api/create-admin', AdminControl.createAdmin);
 
-
-
 app.listen(port, function() {
 	console.log("Listening on port:", port);
 });
 mongoose.connect(mongooseURI);
 
-var conn = mongoose.connection;
-
-conn.once('open', function(){
+mongoose.connection.once('open', function(){
 	console.log("Connected to MLab at " + mongooseURI);
 })
