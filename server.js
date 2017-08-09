@@ -9,6 +9,7 @@ var express = require('express')
 ,	session = require('express-session')
 ,	needle = require('needle')
 ,   PostControl = require('./controllers/PostControl.js')
+,	Post = require('./models/Post.js')
 ,	app = express();
 
 app.use(bodyParser.json());
@@ -18,9 +19,9 @@ app.use(passport.session());
 app.use(express.static(__dirname + '/public'));
 
 //POSTS
-app.post('/srvr/post', PostControl.newBlogPost);
-app.get('/srvr/get', PostControl.getBlogPosts);
-PostControl.newBlogPost();
+app.post('/api/post', PostControl.newPost);
+app.get('/api/get', PostControl.getPosts);
+
 
 
 app.listen(port, function() {
