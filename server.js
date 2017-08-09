@@ -11,7 +11,6 @@ var express = require('express')
 ,	needle = require('needle')
 ,   PostControl = require('./controllers/PostControl.js')
 ,   AdminControl = require('./controllers/AdminControl.js')
-,	Post = require('./models/Post.js')
 ,	app = express();
 
 app.use(bodyParser.json());
