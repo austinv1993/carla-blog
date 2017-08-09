@@ -1,7 +1,7 @@
 var mongoose = require('mongoose');
 
 
-var BlogPost = new mongoose.Schema({
+var Post = new mongoose.Schema({
     title: {type: String, required: true},
     summary: {type: String, required: true},
     body: {type: String, required: true},
@@ -9,4 +9,4 @@ var BlogPost = new mongoose.Schema({
     imageUrl: String
 })
 
-module.exports = mongoose.model('BlogPost', BlogPost)
+module.exports = mongoose.model('Post', Post)
