@@ -7,6 +7,7 @@ var express = require('express')
 ,	secret = require('./secret.js')
 ,	mongooseURI = secret.mongooseURI
 ,	passport = require('passport')
+,	passportLocal = require('passport-local')
 ,	session = require('express-session')
 ,	needle = require('needle')
 ,   PostControl = require('./controllers/PostControl.js')
