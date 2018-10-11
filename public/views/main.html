@@ -10,17 +10,14 @@
 </div>
 <div class="container">
 
-    <div class="nav-menu">
+    <div class="nav-menu"></div>
 
+    <div ng-repeat="post in $scope.posts">
+        <form action="">
+            <h2>{{post.title}}test</h2> <br>
+            <p>{{post.body}}test</p>
+        </form>
     </div>
-    <button ng-click="toggleForm()"></button>
-    <div class="postCreation" ng-show="showForm">
-        <div class="form">
-            <input ng-model="post.title" type="text">
-            <input ng-model="post.summary" type="text">
-            <input ng-model="post.body" type="text">
-            <input ng-model="post.imageUrl" type="text">
-        </div>
-    </div>
+
 
 </div>

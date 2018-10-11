@@ -1,8 +1,7 @@
-angular.module('app', ['ui.router'])
-.config(function($stateProvider, $urlRouterProvider) {
-	
-	
-	
+var app = angular.module('blog', ['ui.router']);
+
+app.config(function($stateProvider, $urlRouterProvider) {
+
 	$stateProvider
 		.state('main', {
 				url: '/main',

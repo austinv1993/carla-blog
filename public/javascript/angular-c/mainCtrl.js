@@ -1,19 +1,17 @@
-angular.module('app')
+angular.module('blog')
 .controller('mainCtrl', function($scope, postService) {
-    $scope.test = 'working';
-    $scope.newBlogPost = function(post) {
-        postService.newBlogPost(post)
+    $scope.posts = [];
+
+    $scope.createPost = function(post) {
+        postService.createPost(post)
             .then(function() {
                 console.log('Post created.')
             })
-    }
-    $scope.showForm = true;
-    $scope.toggleForm = function() {
-        if($scope.showForm) {
-            $scope.showForm = false;
-        } else{
-            $scope.showForm = true;
-        }
-    }
-    
-})
+    };
+
+    function getPosts() {
+        this.posts = postService.getBlogPosts();
+        console.log(this.posts);
+    };
+    getPosts();
+});

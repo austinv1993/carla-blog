@@ -1,7 +1,6 @@
 {
   "name": "carla-blog",
   "version": "1.0.0",
-  "description": "",
   "main": "server.js",
   "dependencies": {
     "bcrypt": "^1.0.2",
@@ -23,5 +22,14 @@
     "start": "node server.js"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/austinv1993/carla-blog.git"
+  },
+  "bugs": {
+    "url": "https://github.com/austinv1993/carla-blog/issues"
+  },
+  "homepage": "https://github.com/austinv1993/carla-blog#readme",
+  "description": ""
 }

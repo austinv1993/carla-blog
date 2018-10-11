@@ -1,15 +1,15 @@
-angular.module('app')
+angular.module('blog')
 .service('postService', function($http) {
-    this.newBlogPost = function(post) {
+    this.createPost = function(post) {
         return $http.post('http://localhost:3000/srvr/post', post)
             .then(function(response) {
-                console.log('This is the reponse from postService.newBlogPost', response.data)
+                console.log('This is the reponse from postService.createPost', response.data)
             })
     };
     this.getBlogPosts = function() {
-        return $http.get('http://localhost:3000/srvr/post')
+        return $http.get('http://localhost:3000/api/get')
             .then(function(response) {
                 return response.data;
             })
     };
-})
+});
