@@ -6,7 +6,7 @@ angular.module('blog')
                 console.log('This is the reponse from postService.createPost', response.data)
             })
     };
-    this.getBlogPosts = function() {
+    this.getPosts = function() {
         return $http.get('http://localhost:3000/api/get')
             .then(function(response) {
                 return response.data;
