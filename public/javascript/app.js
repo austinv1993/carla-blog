@@ -8,5 +8,10 @@ app.config(function($stateProvider, $urlRouterProvider) {
 				controller: 'mainCtrl',
 				templateUrl: './views/main.html'
 		})
+		.state('create', {
+				url: '/create',
+				controller: 'createCtrl',
+				templateUrl: './views/create.html'
+		});
     $urlRouterProvider.otherwise('/main')
 })

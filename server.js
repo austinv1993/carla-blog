@@ -29,12 +29,12 @@ app.use(express.static(__dirname + '/public'));
 app.get('/login', UserControl.login);
 app.post('/register', UserControl.register);
 
-//POSTS
-app.post('/api/post', PostControl.newPost);
-app.get('/api/get', PostControl.getPosts);
+//POST
+app.post('/api/create/posts', PostControl.newPost);
+app.get('/api/get/posts', PostControl.getPosts);
 
-//ADMIN
-app.post('/api/create-admin', AdminControl.createAdmin);
+//USER
+app.post('/api/create/user', AdminControl.createAdmin);
 
 app.listen(port, function() {
 	console.log("Listening on port:", port);
