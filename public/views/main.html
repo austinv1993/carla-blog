@@ -10,8 +10,8 @@
 
     <div ng-repeat="post in posts">
         <div class="container">
-            <h3>{{post.title}}</h3>
-            <button type="button" class="btn btn-default" ng-click="editPost(post._id)">Edit</button>
+            <h3 class="inline">{{post.title}}</h3>
+            <button type="button" class="btn btn-default float-right" ng-click="editPost(post._id)">Edit</button>
             <div class="well">
                 {{post.body}}
             </div>
