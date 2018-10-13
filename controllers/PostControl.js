@@ -29,11 +29,11 @@ module.exports = {
         })
     },
     update: function(req, res) {
-        Post.findByIdAndUpdate(req.body.id, {title: req.body.title, body: req.body.body}, function(err, workout) {
+        Post.findByIdAndUpdate(req.body._id, {title: req.body.title, body: req.body.body}, function(err, post) {
             if (err) {
                 res.send(err);
             } else {
-                res.send(workout);
+                res.send(post);
             }
         })
     }
