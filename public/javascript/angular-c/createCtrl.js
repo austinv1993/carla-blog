@@ -12,4 +12,8 @@ angular.module("blog")
         }
     };
 
+    $scope.cancel = function() {
+        $state.go('main');
+    };
+
 });

@@ -12,6 +12,10 @@ angular.module("blog")
         }
     };
 
+    $scope.cancel = function() {
+        $state.go('main');
+    };
+
     function getPostById() {
         postSrvc.getById($stateParams.postId).then(function (response) {
             $scope.post = response;
