@@ -4,7 +4,7 @@ angular.module("blog")
     $scope.post = {};
 
     $scope.validatePost = function() {
-        if (postSrvc.validatePost($scope.post)) {
+        if (postSrvc.validate($scope.post)) {
             postSrvc.updatePost($scope.post).then(function(response) {
                 console.log(response + "\n" + $scope.post)
             })

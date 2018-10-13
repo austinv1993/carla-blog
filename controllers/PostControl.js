@@ -20,11 +20,11 @@ module.exports = {
         }) 
     },
     getById: function (req, res) {
-        Post.findById(req.query.postId, function (err, workout) {
+        Post.findById(req.params.postId, function (err, post) {
             if (err) {
                 res.send(err);
             } else {
-                res.send(workout);
+                res.send(post);
             }
         })
     },

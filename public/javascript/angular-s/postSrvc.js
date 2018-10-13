@@ -29,7 +29,7 @@ angular.module('blog')
             })
     };
 
-    this.validatePost = function (post) {
+    this.validate = function (post) {
         if(!post.title || post.title === "") {
             console.log("Post title required");
             return false;
