@@ -9,8 +9,7 @@ var express = require('express')
 ,	session = require('express-session')
 ,	flash = require('connect-flash')
 ,   PostControl = require('./controllers/PostControl.js')
-,   AdminControl = require('./controllers/AdminControl.js')
-,   UserControl = require('./controllers/UserControl.js')
+// ,   UserControl = require('./controllers/UserControl.js')
 ,	app = express();
 
 require('./config/passport')(passport);
@@ -25,18 +24,12 @@ app.use(passport.initialize());
 app.use(passport.session());
 app.use(express.static(__dirname + '/public'));
 
-//PASSPORT AUTH
-app.get('/login', UserControl.login);
-app.post('/register', UserControl.register);
-
 //POST
-app.get('/api/get/posts', PostControl.getAll);
-app.get('/api/get/posts/:postId', PostControl.getById);
-app.post('/api/create/posts', PostControl.create);
-app.put('/api/update/posts', PostControl.update);
-
-//USER
-app.post('/api/create/user', AdminControl.createAdmin);
+app.get('/api/posts', PostControl.getAll);
+app.get('/api/posts/:postId', PostControl.getById);
+app.post('/api/posts', PostControl.create);
+app.put('/api/posts', PostControl.update);
+app.delete('/api/posts/:postId', PostControl.remove);
 
 app.listen(port, function() {
 	console.log("Listening on port:", port);

@@ -36,5 +36,14 @@ module.exports = {
                 res.send(post);
             }
         })
+    },
+    remove: function(req, res) {
+        Post.findByIdAndRemove(req.params.postId, function(err, post) {
+            if (err) {
+                res.send(err);
+            } else {
+                res.send(post);
+            }
+        })
     }
 };

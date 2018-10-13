@@ -12,6 +12,13 @@ angular.module("blog")
         }
     };
 
+    $scope.deletePost = function(postId) {
+        postSrvc.remove(postId).then(function (response) {
+            console.log(response);
+            $state.go('main');
+        })
+    };
+
     $scope.cancel = function() {
         $state.go('main');
     };
