@@ -11,7 +11,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
 		.state('create', {
 				url: '/create',
 				controller: 'createCtrl',
-				templateUrl: './views/edit.html'
+				templateUrl: './views/create.html'
 		})
         .state('edit', {
             url: '/edit/:postId',

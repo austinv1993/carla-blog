@@ -10,7 +10,7 @@ angular.module('blog')
     getPosts();
 
     function getPosts() {
-        postSrvc.getPosts().then(function (posts) {
+        postSrvc.getAll().then(function (posts) {
             $scope.posts = posts;
         })
     }

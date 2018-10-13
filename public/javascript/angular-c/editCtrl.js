@@ -3,16 +3,16 @@ angular.module("blog")
 
     $scope.post = {};
 
-    $scope.validatePost = function() {
+    $scope.updatePost = function() {
         if (postSrvc.validate($scope.post)) {
-            postSrvc.updatePost($scope.post).then(function(response) {
+            postSrvc.update($scope.post).then(function(response) {
                 console.log(response + "\n" + $scope.post)
             })
         }
     };
 
     function getPostById() {
-        postSrvc.getPostById($stateParams.postId).then(function (response) {
+        postSrvc.getById($stateParams.postId).then(function (response) {
             $scope.post = response;
         })
     }

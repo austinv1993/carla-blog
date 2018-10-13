@@ -3,9 +3,9 @@ angular.module("blog")
 
     $scope.post = {};
 
-    $scope.validatePost = function() {
+    $scope.createPost = function() {
         if (postSrvc.validate($scope.post)) {
-            postSrvc.createPost($scope.post).then(function(response) {
+            postSrvc.create($scope.post).then(function(response) {
                 console.log(response + "\n" + $scope.post)
             })
         }
