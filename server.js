@@ -30,8 +30,10 @@ app.get('/login', UserControl.login);
 app.post('/register', UserControl.register);
 
 //POST
-app.post('/api/create/posts', PostControl.newPost);
-app.get('/api/get/posts', PostControl.getPosts);
+app.get('/api/get/posts', PostControl.getAll);
+app.get('/api/get/posts/:postId', PostControl.getById);
+app.post('/api/create/posts', PostControl.create);
+app.put('/api/update/posts', PostControl.update);
 
 //USER
 app.post('/api/create/user', AdminControl.createAdmin);

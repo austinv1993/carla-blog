@@ -1,24 +1,14 @@
 angular.module("blog")
-.controller("createCtrl", function ($scope, post) {
+.controller("createCtrl", function ($scope, postSrvc) {
 
     $scope.post = {};
 
-    $scope.validatePost = function () {
-      if(!$scope.post.title || $scope.post.title === "") {
-          console.log("Post title required");
-          return;
-      }
-      if(!$scope.post.body || $scope.post.body === "") {
-          console.log("Post body required");
-          return;
-      }
-      createPost();
+    $scope.validatePost = function() {
+        if (postSrvc.validatePost($scope.post)) {
+            postSrvc.createPost($scope.post).then(function(response) {
+                console.log(response + "\n" + $scope.post)
+            })
+        }
     };
-
-    function createPost() {
-        post.createPost($scope.post).then(function(response) {
-            console.log(response + "\n" + post)
-        })
-    }
 
 });

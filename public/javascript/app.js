@@ -11,7 +11,14 @@ app.config(function($stateProvider, $urlRouterProvider) {
 		.state('create', {
 				url: '/create',
 				controller: 'createCtrl',
-				templateUrl: './views/create.html'
-		});
+				templateUrl: './views/edit.html'
+		})
+        .state('edit', {
+            url: '/edit/:postId',
+            controller: 'editCtrl',
+            templateUrl: './views/edit.html'
+        });
+
     $urlRouterProvider.otherwise('/main')
-})
+
+});
