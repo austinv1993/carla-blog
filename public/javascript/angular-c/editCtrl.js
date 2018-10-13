@@ -1,12 +1,13 @@
 angular.module("blog")
-.controller("editCtrl", function ($scope, $stateParams, postSrvc) {
+.controller("editCtrl", function ($scope, $state, $stateParams, postSrvc) {
 
     $scope.post = {};
 
     $scope.updatePost = function() {
         if (postSrvc.validate($scope.post)) {
             postSrvc.update($scope.post).then(function(response) {
-                console.log(response + "\n" + $scope.post)
+                console.log(response);
+                $state.go('main');
             })
         }
     };

@@ -3,6 +3,10 @@ angular.module('blog')
 
     $scope.posts = [];
 
+    $scope.createPost = function() {
+        $state.go("create");
+    };
+
     $scope.editPost = function(postId) {
         $state.go("edit", {postId: postId});
     };
