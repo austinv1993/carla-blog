@@ -17,7 +17,7 @@
 
     <div class="nav-menu"></div>
 
-    <div ng-repeat="post in posts | filter:{title:search}">
+    <div ng-repeat="post in displayedPosts | filter:{title:search}">
         <div class="container">
             <h3 class="inline">{{post.title}}</h3>
             <button type="button" class="btn btn-default float-right" ng-click="editPost(post._id)">Edit</button>
@@ -26,4 +26,11 @@
             </div>
         </div>
     </div>
+
+    <nav aria-label="...">
+        <div class="pager">
+            <button id="Previous" type="button" class="btn btn-default" ng-click="paginate(false)">Previous</button>
+            <button id="Next" type="button" class="btn btn-default" ng-click="paginate(true)">Next</button>
+        </div>
+    </nav>
 </div>
