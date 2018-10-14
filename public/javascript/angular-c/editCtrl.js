@@ -13,10 +13,12 @@ angular.module("blog")
     };
 
     $scope.deletePost = function(postId) {
-        postSrvc.remove(postId).then(function (response) {
-            console.log(response);
-            $state.go('main');
-        })
+        if (confirm("Are you sure you want to delete this post?")) {
+            postSrvc.remove(postId).then(function (response) {
+                console.log(response);
+                $state.go('main');
+            })
+        }
     };
 
     $scope.cancel = function() {
