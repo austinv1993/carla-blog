@@ -25,6 +25,7 @@ body, html {
 .float-right {
     float: right;
 }
-.container {
-    padding: 15px;
+.post-body-list {
+    max-height: 100px;
+    overflow: hidden;
 }

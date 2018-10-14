@@ -1,7 +1,7 @@
 angular.module('blog')
-.controller('mainCtrl', function($scope, $state, postSrvc) {
+.controller('listCtrl', function($scope, $state, postSrvc) {
 
-    $scope.post = {};
+    $scope.posts = [];
 
     $scope.createPost = function() {
         $state.go("create");
@@ -11,15 +11,15 @@ angular.module('blog')
         $state.go("edit", {postId: postId});
     };
 
-    $scope.listView = function() {
-        $state.go("list");
+    $scope.mainView = function() {
+        $state.go("main");
     };
 
     getPosts();
 
     function getPosts() {
         postSrvc.getAll().then(function (posts) {
-            $scope.post = posts[0];
+            $scope.posts = posts;
         })
     }
 

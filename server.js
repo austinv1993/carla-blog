@@ -9,7 +9,7 @@ var express = require('express')
 ,	session = require('express-session')
 ,	flash = require('connect-flash')
 ,   PostControl = require('./controllers/PostControl.js')
-// ,   UserControl = require('./controllers/UserControl.js')
+,   UserControl = require('./controllers/UserControl.js')
 ,	app = express();
 
 require('./config/passport')(passport);

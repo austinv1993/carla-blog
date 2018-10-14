@@ -17,7 +17,12 @@ app.config(function($stateProvider, $urlRouterProvider) {
             url: '/edit/:postId',
             controller: 'editCtrl',
             templateUrl: './views/edit.html'
-        });
+        })
+		.state('list', {
+        	url: '/list',
+        	controller: 'listCtrl',
+        	templateUrl: './views/list.html'
+    	});
 
     $urlRouterProvider.otherwise('/main')
 
