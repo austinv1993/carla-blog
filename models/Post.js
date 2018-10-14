@@ -4,7 +4,8 @@ var mongoose = require('mongoose');
 var Post = new mongoose.Schema({
     title: {type: String, required: true},
     body: {type: String, required: true},
-    creationDate: {type: String, required: true, default: new Date()},
+    dateCreated: {type: String, required: true},
+    dateLastModified: {type: String, required: true},
     imageUrl: String
 })
 
