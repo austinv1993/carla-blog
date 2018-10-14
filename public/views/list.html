@@ -1,7 +1,14 @@
 <div class="container">
-
     <div class="page-header">
-        <h2 id="header-content">Everyday Moments by Carla</h2>
+        <div id="header-content">
+            <h2 class="inline">Everyday Moments by Carla</h2>
+            <form class="navbar-form navbar-right ">
+                <div class="form-group">
+                    <label for="Search">Search:</label>
+                    <input id="Search" type="text" class="form-control" placeholder="Title" ng-model="search">
+                </div>
+            </form>
+        </div>
     </div>
 
     <div class="btn-group-horizontal">
@@ -11,7 +18,7 @@
 
     <div class="nav-menu"></div>
 
-    <div ng-repeat="post in posts">
+    <div ng-repeat="post in posts | filter:{title:search}">
         <div class="container">
             <h3 class="inline">{{post.title}}</h3>
             <button type="button" class="btn btn-default float-right" ng-click="editPost(post._id)">Edit</button>
@@ -20,5 +27,4 @@
             </div>
         </div>
     </div>
-
 </div>

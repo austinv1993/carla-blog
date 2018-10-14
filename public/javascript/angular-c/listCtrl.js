@@ -2,6 +2,7 @@ angular.module('blog')
 .controller('listCtrl', function($scope, $state, postSrvc) {
 
     $scope.posts = [];
+    $scope.search = "";
 
     $scope.createPost = function() {
         $state.go("create");
